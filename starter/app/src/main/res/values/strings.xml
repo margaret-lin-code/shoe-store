@@ -9,4 +9,7 @@
     <string name="sign_up_button">Sign up</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_text_1">Welcome to…</string>
+    <string name="the_shoe_store">The Shoe Store!</string>
+    <string name="next_button_text">NEXT</string>
 </resources>
