@@ -18,4 +18,14 @@
     <string name="shoe_listings">Shoe List</string>
     <string name="to_shoe_detail">To Shoe Detail</string>
     <string name="logout_menu_text">Logout</string>
+    <string name="shoe_name_label">Shoe Name: </string>
+    <string name="company_label">Company: </string>
+    <string name="shoe_size_label">Size: </string>
+    <string name="description_label">Description: </string>
+    <string name="shoe_name_hint">Type the shoe name</string>
+    <string name="company_hint">Type the company name…</string>
+    <string name="shoe_size_hint">What is the shoe size?</string>
+    <string name="description_hint">Anything to add?</string>
+    <string name="save_button">Save</string>
+    <string name="cancel_button">Cancel</string>
 </resources>
