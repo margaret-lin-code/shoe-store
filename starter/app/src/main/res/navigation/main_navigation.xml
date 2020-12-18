@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@+id/login_fragment">
 
     <fragment
-        android:id="@+id/loginFragment"
+        android:id="@+id/login_fragment"
         android:name="com.udacity.shoestore.screens.login.LoginFragment"
         android:label="login_fragment" >
         <action

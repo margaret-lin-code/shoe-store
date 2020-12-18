@@ -17,4 +17,5 @@
     <string name="what_shoes_text_3">Click "Shoe List" to check out our available listings!</string>
     <string name="shoe_listings">Shoe List</string>
     <string name="to_shoe_detail">To Shoe Detail</string>
+    <string name="logout_menu_text">Logout</string>
 </resources>

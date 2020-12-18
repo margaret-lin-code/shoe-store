@@ -12,11 +12,10 @@
             tools:context=".screens.shoelist.ShoeListFragment">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="@string/shoe_listings"
-                android:textSize="40sp"
-                android:padding="16dp"/>
+                android:paddingTop="600dp"/>
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/to_shoe_detail_button"
