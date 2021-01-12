@@ -6,7 +6,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.onNavDestinationSelected
 import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 
@@ -35,9 +34,15 @@ class ShoeListFragment : Fragment() {
         inflater.inflate(R.menu.logout_menu, menu)
     }
 
-    //TODO: fix this so the menu item can lead the destination to login screen
+    //TODO (1): need fix this so the menu item can lead the destination to login screen
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        navController = findNavController(R.id.nav_host_fragment)
-        return item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
+        if (item.itemId == R.id.logout_button) {
+            logout()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun logout() {
+        findNavController().navigate(R.id.action_shoeListFragment_to_loginFragment)
     }
 }
