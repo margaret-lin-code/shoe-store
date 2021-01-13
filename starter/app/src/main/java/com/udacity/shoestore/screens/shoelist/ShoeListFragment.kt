@@ -4,14 +4,18 @@ import android.os.Bundle
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavController
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
+import com.udacity.shoestore.SharedViewModel
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
+import com.udacity.shoestore.databinding.ShoeListItemBinding
 
 
 class ShoeListFragment : Fragment() {
-    private lateinit var navController: NavController
+    private val viewModel: SharedViewModel by activityViewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -19,6 +23,22 @@ class ShoeListFragment : Fragment() {
     ): View? {
         val binding: FragmentShoeListBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list,
             container, false)
+
+        binding.lifecycleOwner = this
+
+        viewModel.shoeList.observe(viewLifecycleOwner, Observer {
+            for (shoe in it) {
+                DataBindingUtil.inflate<ShoeListItemBinding>(
+                    layoutInflater,
+                    R.layout.shoe_list_item,
+                    binding.shoeListLayout,
+                    true
+                ).apply {
+                    this.shoe = shoe
+                    invalidateAll()
+                }
+            }
+        })
 
         binding.toShoeDetailButton.setOnClickListener {
             findNavController().navigate(R.id.action_shoeListFragment_to_shoeDetailFragment)
@@ -34,7 +54,6 @@ class ShoeListFragment : Fragment() {
         inflater.inflate(R.menu.logout_menu, menu)
     }
 
-    //TODO (1): need fix this so the menu item can lead the destination to login screen
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.logout_button) {
             logout()

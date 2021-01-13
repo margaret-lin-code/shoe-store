@@ -5,8 +5,12 @@
 
     <data>
         <variable
-            name="shoeListViewModel"
-            type="com.udacity.shoestore.screens.shoelist.ShoeListViewModel" />
+            name="sharedViewModel"
+            type="com.udacity.shoestore.SharedViewModel" />
+
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -80,6 +84,7 @@
             android:layout_marginEnd="48dp"
             android:ems="10"
             android:hint="@string/shoe_name_hint"
+            android:text="@={shoe.name}"
             android:importantForAutofill="no"
             android:inputType="textPersonName|text"
             android:textSize="@dimen/label_text_size"
@@ -97,6 +102,7 @@
             android:layout_marginEnd="48dp"
             android:ems="10"
             android:hint="@string/shoe_size_hint"
+            android:text="@={`` + shoe.size}"
             android:importantForAutofill="no"
             android:inputType="number"
             android:textSize="@dimen/label_text_size"
@@ -111,6 +117,7 @@
             android:layout_height="38dp"
             android:ems="10"
             android:hint="@string/company_hint"
+            android:text="@={shoe.company}"
             android:importantForAutofill="no"
             android:inputType="textPersonName|text"
             android:textSize="@dimen/label_text_size"
@@ -128,6 +135,7 @@
             android:layout_marginBottom="300dp"
             android:ems="10"
             android:gravity="start|top"
+            android:text="@={shoe.description}"
             android:hint="@string/description_hint"
             android:importantForAutofill="no"
             android:inputType="textMultiLine"
@@ -146,7 +154,6 @@
             android:background="@android:color/holo_red_dark"
             android:text="@string/cancel_button"
             android:textColor="@color/light_gray"
-            android:onClick="@{() -> shoeListViewModel.onCancel()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/save_button"
             app:layout_constraintHorizontal_bias="0.5"
@@ -163,7 +170,7 @@
             android:background="@color/colorPrimary"
             android:text="@string/save_button"
             android:textColor="@color/light_gray"
-            android:onClick="@{() -> shoeListViewModel.onSave()}"
+            android:onClick="@{(v) -> sharedViewModel.onSave(v, shoe)}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
