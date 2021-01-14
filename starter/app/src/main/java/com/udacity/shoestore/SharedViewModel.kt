@@ -15,6 +15,9 @@ class SharedViewModel: ViewModel() {
     val shoeList: LiveData<ArrayList<Shoe>>
         get() = _shoeList
 
+    // Initialize shoe ready for binding
+    var shoe = Shoe("", 0.0, "", "")
+
     fun onSave(v: View, shoe: Shoe?) {
         // add the current shoe detail into the list
         if (shoe != null) {

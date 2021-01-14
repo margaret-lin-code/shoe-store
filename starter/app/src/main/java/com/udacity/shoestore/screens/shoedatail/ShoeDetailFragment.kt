@@ -11,7 +11,6 @@ import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
 import com.udacity.shoestore.SharedViewModel
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
-import com.udacity.shoestore.models.Shoe
 
 class ShoeDetailFragment : Fragment() {
     private val viewModel: SharedViewModel by activityViewModels()
@@ -29,8 +28,8 @@ class ShoeDetailFragment : Fragment() {
 
         binding.sharedViewModel = viewModel
 
-        // Instance of Shoe data class
-        binding.shoe = Shoe("",0.0,"","")
+        // Binding the shoe data to shoe viewModel
+        binding.shoe = viewModel.shoe
 
         // Specity the current activity as a lifecycleowner
         binding.lifecycleOwner = this
