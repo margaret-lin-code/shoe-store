@@ -10,6 +10,7 @@
 
     </data>
 
+    <!-- LinearLayout is used here because it is displaying a simple shoe list items -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

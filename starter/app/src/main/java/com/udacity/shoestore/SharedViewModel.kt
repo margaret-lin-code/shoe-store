@@ -10,7 +10,7 @@ import com.udacity.shoestore.models.Shoe
 
 class SharedViewModel: ViewModel() {
 
-    // Create a empty shoe list
+    // Create an empty shoe list
     private var _shoeList = MutableLiveData<ArrayList<Shoe>>()
     val shoeList: LiveData<ArrayList<Shoe>>
         get() = _shoeList

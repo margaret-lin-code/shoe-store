@@ -13,6 +13,8 @@
             type="com.udacity.shoestore.models.Shoe" />
     </data>
 
+    <!-- ConstraintLayout is used here because I want to have "SAVE" and "CANCEL" buttons
+       to place horizontally to each other, below the last edit text. It's used to avoid nested viewgroups-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -13,8 +13,6 @@ import com.udacity.shoestore.SharedViewModel
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
 import com.udacity.shoestore.models.Shoe
 
-//private lateinit var viewModel: SharedViewModel
-
 class ShoeDetailFragment : Fragment() {
     private val viewModel: SharedViewModel by activityViewModels()
 
@@ -32,7 +30,7 @@ class ShoeDetailFragment : Fragment() {
         binding.sharedViewModel = viewModel
 
         // Instance of Shoe data class
-        binding.shoe = Shoe("MyName",0.0,"","")
+        binding.shoe = Shoe("",0.0,"","")
 
         // Specity the current activity as a lifecycleowner
         binding.lifecycleOwner = this
