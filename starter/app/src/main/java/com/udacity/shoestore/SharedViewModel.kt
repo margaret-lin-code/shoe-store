@@ -22,6 +22,9 @@ class SharedViewModel: ViewModel() {
         // add the current shoe detail into the list
         if (shoe != null) {
             _shoeList.value?.add(shoe)
+
+        // instantiate a new shoe
+            this.shoe = Shoe("", 0.0, "", "")
         }
 
         // Navigate back to shoe list screen
